@@ -39,7 +39,7 @@ To place these files you can make a persistent storige of the .ssh directory lik
 $ docker run -d --restart always --name=gogs  -p 3022:3022 -p 3000:3000 -v /data/gogs/ssh:/opt/gogs
 /.ssh -v /data/gogs/data:/data kdedesign/gogs
 ```
-Now you can connect to the container and execute as the user git the command:
+Now you can connect to the container and execute a bash shell as the user git:
 ```
 $ docker exec -it gogs bash
 ```
