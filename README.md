@@ -27,7 +27,7 @@ $ docker run -d --restart always --name=gogs  -p 3022:3022 -p 3000:3000 -v /data
 Making a backup of your gogs instance is easy even though it is running in a docker container. All you need is the name of the container to connect to, in the example above the name is 'gogs' (--name=gogs). So start your backup this way:
 
 ```
-$ docker exec -it docker exec -it gogs /opt/gogs/gogs backup --target=/data/backup --config=/data/app.ini 
+$ docker exec -it gogs /opt/gogs/gogs backup --target=/data/backup --config=/data/app.ini 
 ```
 Using the command above your backup will be placed in the directory '/data/backup'.
 Want to know more or how to restore, please read the article: https://discuss.gogs.io/t/how-to-backup-restore-and-migrate/991
