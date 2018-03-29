@@ -32,7 +32,6 @@ $ docker exec -it docker exec -it gogs /opt/gogs/gogs backup --target=/data/back
 Using the command above your backup will be placed in the directory '/data/backup'.
 Want to know more or how to restore, please read the article: https://discuss.gogs.io/t/how-to-backup-restore-and-migrate/991
 
-
 ### Saving SSH keys
 If you wish to use a githook, for example to mirror your local gogs repository on GutHub you can make use of a ssh public/private key. These keys typically are placed in the .ssh directory in the home directory of the user.
 To place these files you can make a persistent storige of the .ssh directory like this:
