@@ -64,9 +64,6 @@ git push --mirror git@github.com:kdeenkhoorn/gogs.git
 ```
 If all went wel you will see the magic happen!
 
-
-If you want to save your generated ssh key. This is handy in combination with githooks.
-
 ## More info:
 - Check https://github.com/kdeenkhoorn/gogs
 
