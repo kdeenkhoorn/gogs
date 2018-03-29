@@ -62,7 +62,7 @@ Finally now you can define a githook in gogs for your repository, for example a 
 #!/bin/bash
 git push --mirror git@github.com:kdeenkhoorn/gogs.git
 ```
-If all went wel you will see the magic happen!
+Now alter some code in your repository and push the commit, if all went wel you will see the magic happen!
 
 ## More info:
 - Check https://github.com/kdeenkhoorn/gogs
