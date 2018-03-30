@@ -66,6 +66,7 @@ Now alter some code in your repository and push the commit, if all went wel you 
 ## More info:
 - Check https://github.com/kdeenkhoorn/gogs
 - Check https://github.com/gogits/gogs/issues/96
+- Check https://hub.docker.com/r/kdedesign/gogs/
 
 Have fun!
 
