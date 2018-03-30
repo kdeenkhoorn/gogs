@@ -2,7 +2,7 @@
 This docker image is an armhf version of GOGS based on my own debian 9 linux image.
 
 ## Image dependencies:
-- One volume /data required for persistent storage
+- One volume /data/gogs required for persistent storage
 - Port 3000 for HTTP access to the GOGS daemon.
 - Port 3022 for SSH access to the GOGS daemon.
 - User: git (uid: 3000)
@@ -65,6 +65,7 @@ Now alter some code in your repository and push the commit, if all went wel you 
 
 ## More info:
 - Check https://github.com/kdeenkhoorn/gogs
+- Check https://github.com/gogits/gogs/issues/96
 
 Have fun!
 
