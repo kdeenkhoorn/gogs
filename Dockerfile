@@ -16,23 +16,23 @@ ENV GOPATH=/opt
 
 # Download GO and GOGS version and start build
 
-ADD https://dl.google.com/go/go1.10.linux-armv6l.tar.gz /opt/go1.10.linux-armv6l.tar.gz
-ADD https://github.com/gogits/gogs/archive/v0.11.34.tar.gz /opt/GOGS.tar.gz
-RUN tar -zxf ./go1.10.linux-armv6l.tar.gz \
-    && rm ./go1.10.linux-armv6l.tar.gz \
-    && mkdir -p $GOPATH/src/github.com/gogits/gogs \
-    && cd $GOPATH/src/github.com/gogits/gogs \
+ADD https://dl.google.com/go/go1.10.3.linux-armv6l.tar.gz /opt/go1.10.3.linux-armv6l.tar.gz
+ADD https://github.com/gogs/gogs/archive/v0.11.53.tar.gz /opt/GOGS.tar.gz
+RUN tar -zxf ./go1.10.3.linux-armv6l.tar.gz \
+    && rm ./go1.10.3.linux-armv6l.tar.gz \
+    && mkdir -p $GOPATH/src/github.com/gogs/gogs \
+    && cd $GOPATH/src/github.com/gogs/gogs \
     && tar -zxf /opt/GOGS.tar.gz --strip 1 \
     && rm /opt/GOGS.tar.gz 
 
-RUN cd $GOPATH/src/github.com/gogits/gogs \
+RUN cd $GOPATH/src/github.com/gogs/gogs \
     && /opt/go/bin/go build -tags "sqlite cert" 
 
 # Start second stage of the build
 # Build final image
 
 RUN groupadd -g 3000 git \
-    && useradd -u 3000 -g 3000 -c "GIT user" -d /opt/src/github.com/gogits/gogs  -s /bin/bash git \
+    && useradd -u 3000 -g 3000 -c "GIT user" -d /opt/src/github.com/gogs/gogs  -s /bin/bash git \
     && mkdir -p /opt/gogs \
     && mkdir -p /data \
     && chown -R git:git /data \
@@ -61,15 +61,15 @@ RUN groupadd -g 3000 git \
     && chown -R git:git /opt/gogs
 
 # Copy binaries files and config from first stage build
-COPY --chown=3000:3000 --from=build /opt/src/github.com/gogits/gogs/gogs \
-                                    /opt/src/github.com/gogits/gogs/LICENSE \
-                                    /opt/src/github.com/gogits/gogs/README.md \
-                                    /opt/src/github.com/gogits/gogs/README_ZH.md \
+COPY --chown=3000:3000 --from=build /opt/src/github.com/gogs/gogs/gogs \
+                                    /opt/src/github.com/gogs/gogs/LICENSE \
+                                    /opt/src/github.com/gogs/gogs/README.md \
+                                    /opt/src/github.com/gogs/gogs/README_ZH.md \
                                     /opt/gogs/
 
-COPY --chown=3000:3000 --from=build /opt/src/github.com/gogits/gogs/public /opt/gogs/public
-COPY --chown=3000:3000 --from=build /opt/src/github.com/gogits/gogs/scripts /opt/gogs/scripts
-COPY --chown=3000:3000 --from=build /opt/src/github.com/gogits/gogs/templates /opt/gogs/templates
+COPY --chown=3000:3000 --from=build /opt/src/github.com/gogs/gogs/public /opt/gogs/public
+COPY --chown=3000:3000 --from=build /opt/src/github.com/gogs/gogs/scripts /opt/gogs/scripts
+COPY --chown=3000:3000 --from=build /opt/src/github.com/gogs/gogs/templates /opt/gogs/templates
 
 # Configure Docker Container
 VOLUME ["/data"]
