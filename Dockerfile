@@ -1,5 +1,8 @@
 FROM kdedesign/debian-stretch AS build
 
+ARG GOGSVER=0.11.79
+ARG GOVER=1.11.1
+
 # Update basic OS image
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
@@ -16,10 +19,10 @@ ENV GOPATH=/opt
 
 # Download GO and GOGS version and start build
 
-ADD https://dl.google.com/go/go1.11.1.linux-armv6l.tar.gz /opt/go1.11.1.linux-armv6l.tar.gz
-ADD https://github.com/gogs/gogs/archive/v0.11.66.tar.gz /opt/GOGS.tar.gz
-RUN tar -zxf ./go1.11.1.linux-armv6l.tar.gz \
-    && rm ./go1.11.1.linux-armv6l.tar.gz \
+ADD https://dl.google.com/go/go${GOVER}.linux-armv6l.tar.gz /opt/go${GOVER}.linux-armv6l.tar.gz
+ADD https://github.com/gogs/gogs/archive/v${GOGSVER}.tar.gz /opt/GOGS.tar.gz
+RUN tar -zxf ./go${GOVER}.linux-armv6l.tar.gz \
+    && rm ./go${GOVER}.linux-armv6l.tar.gz \
     && mkdir -p $GOPATH/src/github.com/gogs/gogs \
     && cd $GOPATH/src/github.com/gogs/gogs \
     && tar -zxf /opt/GOGS.tar.gz --strip 1 \
