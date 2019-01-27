@@ -23,7 +23,7 @@ $ docker run -d --restart always --name=gogs  -p 3022:3022 -p 3000:3000 -v /data
 ```
 
 ## Default configuration location
-The default location of the confiuration file app.ini is controlled by the environment variable GOGS_CUSTOM and is set to: GOGS_CUSTOM=/data/custom in this image.
+The default location of the configuration file app.ini is controlled by the environment variable `GOGS_CUSTOM` and is set to: `GOGS_CUSTOM=/data/custom` in this image.
 This means that if you want to create your own configuration file you have to create on your docker volume a directory custom/conf and place your app.ini in there.
 
 ## Handy commands:
