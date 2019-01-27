@@ -57,6 +57,6 @@ VOLUME ["/data"]
 EXPOSE 3022 3000
 USER git
 ENV USER=git
-
+ENV GOGS_CUSTOM=/data/custom
 ENTRYPOINT ["/opt/gogs/gogs"]
-CMD [ "web", "--config=/data/app.ini" ]
+CMD [ "web"]
