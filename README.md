@@ -11,8 +11,8 @@ This docker image is an armhf version of GOGS based on my own debian 9 linux ima
 
 ## Build characteristics:
 - Debian 9 (kdedesign/debian-stretch:1.0)
-- Go 1.11.4 (go1.11.4.linux-armv6l.tar.gz)
-- GOGS 0.11.79 (v0.11.79.tar.gz)
+- Go 1.12.1 (go1.12.1.linux-armv6l.tar.gz)
+- GOGS 0.11.86 (v0.11.86.tar.gz)
 
 ## GOGS build command:
 - go build -tags "sqlite cert"
