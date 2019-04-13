@@ -1,4 +1,4 @@
-FROM kdedesign/debian-stretch AS build
+FROM kdedesign/debian-stretch:latest AS build
 
 ARG GOGSVER=0.11.79
 ARG GOVER=1.11.1
@@ -10,8 +10,8 @@ RUN apt-get update \
     && apt-get dist-upgrade -y \
     && apt-get install -y git gcc wget ca-certificates \
     && rm -rf /var/lib/apt/lists/* \
-    && wget https://dl.google.com/go/go${GOVER}.linux-armv6l.tar.gz -O /opt/go${GOVER}.linux-armv6l.tar.gz \
-    && wget https://github.com/gogs/gogs/archive/v${GOGSVER}.tar.gz -O /opt/GOGS.tar.gz \
+    && wget -q https://dl.google.com/go/go${GOVER}.linux-armv6l.tar.gz -O /opt/go${GOVER}.linux-armv6l.tar.gz \
+    && wget -q https://github.com/gogs/gogs/archive/v${GOGSVER}.tar.gz -O /opt/GOGS.tar.gz \
     && cd /opt \
     && tar -zxf ./go${GOVER}.linux-armv6l.tar.gz \
     && rm ./go${GOVER}.linux-armv6l.tar.gz \
@@ -26,9 +26,8 @@ RUN apt-get update \
     && mkdir -p /opt/gogs /data \
     && chown -R git:git /opt/src /data 
 
-
 # Second stage
-FROM kdedesign/debian-stretch
+FROM kdedesign/debian-stretch:latest
 
 # Update basic OS image
 ENV DEBIAN_FRONTEND noninteractive
