@@ -5,8 +5,8 @@
         }
 
         environment {
-            GOGSVER=0.11.91
-            GOVER=1.12.9
+            GOGSVER="0.11.91"
+            GOVER="1.12.9"
         }
 
         options {
