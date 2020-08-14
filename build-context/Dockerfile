@@ -1,4 +1,4 @@
-FROM kdedesign/debian-stretch:latest AS build
+FROM kdedesign/debian-stable:latest AS build
 
 ARG GOGSVER=0.11.79
 ARG GOVER=1.11.1
@@ -27,7 +27,7 @@ RUN apt-get update \
     && chown -R git:git /opt/src /data 
 
 # Second stage
-FROM kdedesign/debian-stretch:latest
+FROM kdedesign/debian-stable:latest
 
 # Update basic OS image
 ENV DEBIAN_FRONTEND noninteractive

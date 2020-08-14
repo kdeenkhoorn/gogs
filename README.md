@@ -1,5 +1,5 @@
 # GOGS
-This docker image is an armhf version of GOGS based on my own debian 9 linux image.
+This docker image is an armhf version of GOGS based on my own debian stable linux image.
 
 ## Image dependencies:
 - One volume /data/gogs required for persistent storage
@@ -10,8 +10,8 @@ This docker image is an armhf version of GOGS based on my own debian 9 linux ima
 
 
 ## Build characteristics:
-- Debian 9 (kdedesign/debian-stretch:2.0)
-- Go 1.12.9 (go1.12.9.linux-armv6l.tar.gz)
+- Debian stable (kdedesign/debian-stable:latest)
+- Go 1.15 (go1.15.linux-armv6l.tar.gz)
 - GOGS 0.11.91 (v0.11.91.tar.gz)
 
 ## GOGS build command:
