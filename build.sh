@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GOGSVER=0.12.2
+GOGSVER=0.12.3
 GOVER=1.15.2
 
 cd ./build-context
