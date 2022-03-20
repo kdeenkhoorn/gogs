@@ -11,8 +11,8 @@ This docker image is an armhf version of GOGS based on my own debian stable linu
 
 ## Build characteristics:
 - Debian stable (kdedesign/debian-stable:latest)
-- Go 1.17.6 (go1.17.6.linux-armv6l.tar.gz)
-- GOGS 0.12.4 (v0.12.4.tar.gz)
+- Go 1.18 (go1.18.linux-armv6l.tar.gz)
+- GOGS 0.12.6 (v0.12.6.tar.gz)
 
 ## GOGS build command:
 - go build -tags "sqlite cert"

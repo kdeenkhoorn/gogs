@@ -1,7 +1,7 @@
 #!/bin/bash
 
-GOGSVER=0.12.4
-GOVER=1.17.6
+GOGSVER=0.12.6
+GOVER=1.18
 
 cd ./build-context
 docker build --network host --build-arg GOGSVER=${GOGSVER} --build-arg GOVER=${GOVER} -t kdedesign/gogs:${GOGSVER} .
